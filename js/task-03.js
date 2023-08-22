@@ -12,18 +12,12 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-let ulEl = document.querySelector('.gallery');
+const galleryList = document.querySelector('.gallery');
 
-let newEl = images.map(el => {
-  let li = document.createElement('li');
-  let img = document.createElement('img');
-  img.src = el.url;
-  img.alt = el.alt;
-  img.width = 300;
-  img.height = 300;
-  li.appendChild(img);
-  console.log(el);
-  return li;
-})
+const createGalleryItem = ({ url, alt }) => {
+  return `<li class="gallery-item"><img src="${url}" alt="${alt}" class="gallery-img"></li>`;
+};
 
-ulEl.append(...newEl)
+const galleryItemsMarkup = images.map(createGalleryItem).join('');
+
+galleryList.insertAdjacentHTML('beforeend', galleryItemsMarkup);

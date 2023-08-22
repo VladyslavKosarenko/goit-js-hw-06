@@ -3,10 +3,13 @@ const output = document.querySelector('#name-output');
 input.addEventListener('input', changeInput);
 function changeInput(event) {
     const newInput = event.currentTarget.value;
-    if (output === "") {
+    if (newInput === "") {
         output.textContent = "Anonymous";
         
     }
-    output.textContent = newInput;
+    else {
+        output.textContent = newInput;
+    }
+    
     console.log(newInput);
 }

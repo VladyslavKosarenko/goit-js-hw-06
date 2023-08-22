@@ -11,8 +11,8 @@ function onSubmit(event) {
     }
     else {
     const formInfo = {
-    Email: email,
-    Password: password,
+    email: email,
+    password: password,
     }
         console.log(formInfo);
         formSubmit.reset();
